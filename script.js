@@ -51,11 +51,11 @@ document.querySelectorAll('.favorite-button').forEach((button) => {
     if (isSaved) {
       savedHomes.delete(name);
       button.classList.remove('saved');
-      button.textContent = '♡';
+      button.textContent = 'Save';
     } else {
       savedHomes.add(name);
       button.classList.add('saved');
-      button.textContent = '♥';
+      button.textContent = 'Saved';
     }
     button.setAttribute('aria-label', `${isSaved ? 'Save' : 'Remove'} ${name}`);
     savedCount.textContent = savedHomes.size;
