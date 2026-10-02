@@ -95,6 +95,33 @@ h2 { font-size: clamp(52px, 5.4vw, 78px); line-height: .9; letter-spacing: -.065
 .property-meta strong { color: var(--ink); white-space: nowrap; }
 .property-details { display: flex; gap: 15px; padding-top: 10px; border-top: 1px solid var(--line); }
 .property-details span + span { border-left: 1px solid var(--line); padding-left: 15px; }
+.property-address { color: var(--muted); font-size: 11px; margin: 11px 0 0; }
+.property-enquire { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 12px; padding: 11px 0; border: 0; border-top: 1px solid var(--line); background: transparent; color: var(--ink); text-align: left; font-size: 11px; font-weight: 700; }
+.property-enquire span { color: var(--terra); font-size: 16px; font-weight: 400; transition: transform .2s ease; }
+.property-enquire:hover span { transform: translate(3px, -3px); }
+.listing-disclaimer { margin: 32px 0 0; color: var(--muted); font-size: 11px; }
+.property-dialog { width: min(920px, calc(100% - 32px)); max-width: none; max-height: min(90vh, 820px); padding: 34px; border: 1px solid var(--line); background: var(--white); color: var(--ink); }
+.property-dialog::backdrop { background: rgba(27, 29, 26, .62); }
+.dialog-heading { display: flex; align-items: center; justify-content: space-between; }
+.dialog-heading .eyebrow { margin: 0; }
+.dialog-close { width: 36px; height: 36px; border: 1px solid var(--line); background: transparent; font-size: 25px; line-height: 1; }
+.dialog-property { padding: 28px 0; border-bottom: 1px solid var(--line); }
+.dialog-property h2 { font: 38px/1.05 var(--serif); letter-spacing: 0; }
+.dialog-address, .dialog-amenities { color: var(--muted); font-size: 13px; }
+.dialog-price { margin: 14px 0 20px; font-size: 20px; font-weight: 700; }
+.dialog-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 0 0 20px; }
+.dialog-facts div { border-top: 1px solid var(--line); padding-top: 10px; }
+.dialog-facts dt { color: var(--muted); font-size: 10px; text-transform: uppercase; }
+.dialog-facts dd { margin: 4px 0 0; font-size: 13px; }
+.dialog-amenities { margin: 0; line-height: 1.6; }
+.dialog-disclaimer { margin: 15px 0 0; color: var(--muted); font-size: 10px; }
+.property-inquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 22px; padding-top: 24px; }
+.property-inquiry-form h3 { grid-column: 1 / -1; margin: 0; font: 25px var(--serif); }
+.property-inquiry-form label { display: flex; flex-direction: column; gap: 6px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.property-inquiry-form label span { color: var(--muted); font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
+.property-inquiry-form input, .property-inquiry-form textarea { width: 100%; border: 0; outline: 0; background: transparent; resize: vertical; font-size: 13px; }
+.property-inquiry-form button { justify-self: start; }
+.inquiry-message { align-self: center; margin: 0; color: var(--terra); font-size: 11px; }
 .property-card.is-hidden { display: none; }
 .empty-state { display: none; padding: 35px 0; color: var(--muted); }
 .empty-state.visible { display: block; }
@@ -166,6 +193,10 @@ h2 { font-size: clamp(52px, 5.4vw, 78px); line-height: .9; letter-spacing: -.065
   .filter-row { overflow-x: auto; padding-bottom: 15px; }
   .filter-chip { white-space: nowrap; }
   .property-grid, .journal-grid { grid-template-columns: 1fr; gap: 42px; }
+  .property-dialog { padding: 22px; }
+  .dialog-facts { grid-template-columns: 1fr 1fr; }
+  .property-inquiry-form { grid-template-columns: 1fr; gap: 15px; }
+  .property-inquiry-form h3 { grid-column: auto; }
   .property-image { aspect-ratio: 4 / 3; }
   .approach, .contact { width: 100%; padding: 75px 20px; grid-template-columns: 1fr; gap: 48px; }
   .approach-image { height: 400px; }

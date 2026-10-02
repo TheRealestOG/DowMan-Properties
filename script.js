@@ -88,6 +88,49 @@ contactForm.addEventListener('submit', (event) => {
   contactForm.reset();
 });
 
+const propertyDialog = document.querySelector('#property-dialog');
+const inquiryForm = document.querySelector('#property-inquiry-form');
+const inquiryMessage = document.querySelector('#inquiry-message');
+
+document.querySelectorAll('.property-enquire').forEach((button) => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.property-card');
+    const details = card.dataset;
+    document.querySelector('#dialog-title').textContent = details.name;
+    document.querySelector('#dialog-address').textContent = details.address;
+    document.querySelector('#dialog-price').textContent = details.price;
+    document.querySelector('#dialog-beds').textContent = details.beds;
+    document.querySelector('#dialog-baths').textContent = details.baths;
+    document.querySelector('#dialog-area').textContent = details.area;
+    document.querySelector('#dialog-parking').textContent = details.parking;
+    document.querySelector('#dialog-amenities').textContent = details.amenities;
+    inquiryForm.elements.property.value = details.name;
+    inquiryMessage.textContent = '';
+    propertyDialog.showModal();
+  });
+});
+
+document.querySelector('.dialog-close').addEventListener('click', () => propertyDialog.close());
+propertyDialog.addEventListener('click', (event) => {
+  if (event.target === propertyDialog) propertyDialog.close();
+});
+
+inquiryForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const details = new FormData(inquiryForm);
+  const subject = `Property enquiry: ${details.get('property')}`;
+  const body = [
+    `Property: ${details.get('property')}`,
+    `Name: ${details.get('name')}`,
+    `Email: ${details.get('email')}`,
+    `Phone: ${details.get('phone')}`,
+    '',
+    details.get('message')
+  ].join('\n');
+  window.location.href = `mailto:hello@dowman.ng?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  inquiryMessage.textContent = 'Your email app should open with the enquiry addressed to management.';
+});
+
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
