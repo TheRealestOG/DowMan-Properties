@@ -115,20 +115,28 @@ propertyDialog.addEventListener('click', (event) => {
   if (event.target === propertyDialog) propertyDialog.close();
 });
 
-inquiryForm.addEventListener('submit', (event) => {
+inquiryForm.addEventListener('submit', async (event) => {
   event.preventDefault();
-  const details = new FormData(inquiryForm);
-  const subject = `Property enquiry: ${details.get('property')}`;
-  const body = [
-    `Property: ${details.get('property')}`,
-    `Name: ${details.get('name')}`,
-    `Email: ${details.get('email')}`,
-    `Phone: ${details.get('phone')}`,
-    '',
-    details.get('message')
-  ].join('\n');
-  window.location.href = `mailto:hello@dowman.ng?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  inquiryMessage.textContent = 'Your email app should open with the enquiry addressed to management.';
+  const submitButton = inquiryForm.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+  inquiryMessage.textContent = 'Sending your enquiry...';
+
+  try {
+    const response = await fetch(inquiryForm.action, {
+      method: 'POST',
+      body: new FormData(inquiryForm),
+      headers: { Accept: 'application/json' }
+    });
+
+    if (!response.ok) throw new Error('The enquiry could not be sent. Please try again.');
+
+    inquiryMessage.textContent = 'Thank you. Management has received your enquiry and will be in touch.';
+    inquiryForm.reset();
+  } catch (error) {
+    inquiryMessage.textContent = error.message || 'Unable to send your enquiry. Please try again.';
+  } finally {
+    submitButton.disabled = false;
+  }
 });
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
