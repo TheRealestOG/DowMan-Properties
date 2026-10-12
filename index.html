@@ -21,6 +21,7 @@
       <a href="#approach">Our approach</a>
       <a href="#journal">Journal</a>
     </nav>
+
     <div class="header-actions">
       <button class="icon-button saved-link" aria-label="View saved homes" title="Saved homes">
         <span>Saved homes</span><span class="saved-count">0</span>
@@ -74,7 +75,7 @@
         <button class="filter-chip" data-filter="townhouse">Townhouses <span>02</span></button>
       </div>
       <div class="property-grid" id="property-grid">
-        <article class="property-card property-card-large reveal" data-type="house" data-name="The Greenwood House" data-address="Bourdillon Road, Ikoyi, Lagos" data-price="₦450,000,000" data-beds="4" data-baths="4" data-area="2,840 sq ft" data-parking="2 cars" data-amenities="Private garden, fitted kitchen, 24-hour security">
+        <!-- <article class="property-card property-card-large reveal" data-type="house" data-name="The Greenwood House" data-address="Bourdillon Road, Ikoyi, Lagos" data-price="₦450,000,000" data-beds="4" data-baths="4" data-area="2,840 sq ft" data-parking="2 cars" data-amenities="Private garden, fitted kitchen, 24-hour security">
           <div class="property-image"><img src="forsale-4beds.jpg" alt="Modern house surrounded by green trees"><button class="favorite-button" aria-label="Save The Greenwood House" title="Save home">Save</button><span class="property-tag">New listing</span></div>
           <div class="property-meta"><div><h3>The Greenwood House</h3><p>Ikoyi, Lagos · House</p></div><strong>₦450,000,000</strong></div>
           <div class="property-details"><span>4 beds</span><span>4 baths</span><span>2,840 sq ft</span></div>
@@ -115,7 +116,7 @@
           <div class="property-details"><span>2 beds</span><span>2 baths</span><span>1,450 sq ft</span></div>
           <p class="property-address">Gwarinpa, Abuja</p>
           <button class="property-enquire" type="button">View details &amp; enquire</button>
-        </article>
+        </article> -->
       </div>
       <p class="empty-state" id="empty-state">No homes match that search just yet. Try another collection.</p>
       <p class="listing-disclaimer">Property details are indicative examples. Confirm the exact address, price, title and availability with management before making a decision.</p>
@@ -166,5 +167,8 @@
 
   <footer class="site-footer section-shell"><a class="brand" href="#top"><span class="brand-mark">D</span><span>Dowman properties <em>&amp; Co.</em></span></a><p>Thoughtful homes across Nigeria.</p><div class="footer-links"><a href="#properties">Instagram</a><a href="#contact">hello@dowman.ng</a><a href="#top">Back to top</a></div><small>© 2024 DowMan properties &amp; Co. Nigeria. All rights reserved.</small></footer>
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="listings.js"></script>
 </body>
 </html>
