@@ -11,6 +11,11 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="site-preloader" id="site-preloader" role="status" aria-label="Loading DowMan Properties">
+    <span class="preloader-mark">D</span>
+    <span class="preloader-name">DowMan <em>Properties &amp; Co.</em></span>
+    <span class="preloader-indicator" aria-hidden="true"></span>
+  </div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="DowMan Properties & Co. Nigeria home">
       <span class="brand-mark">D</span>
@@ -47,7 +52,7 @@
       </div>
       <div class="hero-visual reveal reveal-delay">
         <div class="hero-image image-frame">
-          <img src="2bed-duplex.jpg" alt="Sunlit contemporary living room with cream furniture">
+          <img src="Assets/top-image.jpg" alt="Sunlit contemporary living room with cream furniture">
           <div class="image-label"><span>01</span><span>Featured residence</span></div>
         </div>
         <div class="hero-note"><span class="dot"></span> Currently featuring <strong>42 homes</strong></div>
@@ -75,48 +80,6 @@
         <button class="filter-chip" data-filter="townhouse">Townhouses <span>02</span></button>
       </div>
       <div class="property-grid" id="property-grid">
-        <!-- <article class="property-card property-card-large reveal" data-type="house" data-name="The Greenwood House" data-address="Bourdillon Road, Ikoyi, Lagos" data-price="₦450,000,000" data-beds="4" data-baths="4" data-area="2,840 sq ft" data-parking="2 cars" data-amenities="Private garden, fitted kitchen, 24-hour security">
-          <div class="property-image"><img src="forsale-4beds.jpg" alt="Modern house surrounded by green trees"><button class="favorite-button" aria-label="Save The Greenwood House" title="Save home">Save</button><span class="property-tag">New listing</span></div>
-          <div class="property-meta"><div><h3>The Greenwood House</h3><p>Ikoyi, Lagos · House</p></div><strong>₦450,000,000</strong></div>
-          <div class="property-details"><span>4 beds</span><span>4 baths</span><span>2,840 sq ft</span></div>
-          <p class="property-address">Bourdillon Road, Ikoyi, Lagos</p>
-          <button class="property-enquire" type="button">View details &amp; enquire</button>
-        </article>
-        <article class="property-card reveal reveal-delay" data-type="apartment" data-name="No. 28 Banana Island" data-address="Banana Island, Ikoyi, Lagos" data-price="₦120,000,000" data-beds="2" data-baths="2" data-area="1,180 sq ft" data-parking="1 car" data-amenities="Balcony, fitted kitchen, lift, residents' gym">
-          <div class="property-image"><img src="Units-2bed.jpg" alt="Bright minimalist apartment interior"><button class="favorite-button" aria-label="Save No. 28 Banana Island" title="Save home">Save</button></div>
-          <div class="property-meta"><div><h3>No. 28 Banana Island</h3><p>Banana Island, Lagos · Apartment</p></div><strong>₦120,000,000</strong></div>
-          <div class="property-details"><span>2 beds</span><span>2 baths</span><span>1,180 sq ft</span></div>
-          <p class="property-address">Banana Island, Ikoyi, Lagos</p>
-          <button class="property-enquire" type="button">View details &amp; enquire</button>
-        </article>
-        <article class="property-card reveal reveal-delay-2" data-type="townhouse" data-name="The Wren House" data-address="Maitama, Abuja" data-price="₦155,000,000" data-beds="3" data-baths="2.5" data-area="1,940 sq ft" data-parking="2 cars" data-amenities="Private terrace, fitted kitchen, estate security">
-          <div class="property-image"><img src="complete-3-bed.jpg" alt="Warm contemporary townhouse exterior"><button class="favorite-button" aria-label="Save The Wren House" title="Save home">Save</button></div>
-          <div class="property-meta"><div><h3>The Wren House</h3><p>Maitama, Abuja · Townhouse</p></div><strong>₦155,000,000</strong></div>
-          <div class="property-details"><span>3 beds</span><span>2.5 baths</span><span>1,940 sq ft</span></div>
-          <p class="property-address">Maitama, Abuja</p>
-          <button class="property-enquire" type="button">View details &amp; enquire</button>
-        </article>
-        <article class="property-card property-card-large reveal" data-type="house" data-name="Masters' Home" data-address="Maitama, Abuja" data-price="₦200,000,000" data-beds="3" data-baths="3" data-area="1,880 sq ft" data-parking="2 cars" data-amenities="Staff quarters, fitted kitchen, backup power">
-          <div class="property-image"><img src="3-bed.jpg" alt="Warm contemporary house exterior"><button class="favorite-button" aria-label="Save Masters' Home" title="Save home">Save</button></div>
-          <div class="property-meta"><div><h3>Masters' Home</h3><p>Maitama, Abuja · House</p></div><strong>₦200,000,000</strong></div>
-          <div class="property-details"><span>3 beds</span><span>3 baths</span><span>1,880 sq ft</span></div>
-          <p class="property-address">Maitama, Abuja</p>
-          <button class="property-enquire" type="button">View details &amp; enquire</button>
-        </article>
-        <article class="property-card reveal reveal-delay" data-type="house" data-name="The Pen House" data-address="Victoria Island, Lagos" data-price="₦330,000,000" data-beds="4" data-baths="4" data-area="2,140 sq ft" data-parking="2 cars" data-amenities="Private courtyard, fitted kitchen, security">
-          <div class="property-image"><img src="pen.jpg" alt="Contemporary home on Victoria Island"><button class="favorite-button" aria-label="Save The Pen House" title="Save home">Save</button></div>
-          <div class="property-meta"><div><h3>The Pen House</h3><p>Victoria Island, Lagos · House</p></div><strong>₦330,000,000</strong></div>
-          <div class="property-details"><span>4 beds</span><span>4 baths</span><span>2,140 sq ft</span></div>
-          <p class="property-address">Victoria Island, Lagos</p>
-          <button class="property-enquire" type="button">View details &amp; enquire</button>
-        </article>
-        <article class="property-card reveal reveal-delay-2" data-type="apartment" data-name="Top Suit" data-address="Gwarinpa, Abuja" data-price="₦85,000,000" data-beds="2" data-baths="2" data-area="1,450 sq ft" data-parking="1 car" data-amenities="Balcony, fitted kitchen, gated estate">
-          <div class="property-image"><img src="full-4-bed.jpg" alt="Modern apartment in Gwarinpa"><button class="favorite-button" aria-label="Save Top Suit" title="Save home">Save</button></div>
-          <div class="property-meta"><div><h3>Top Suit</h3><p>Gwarinpa, Abuja · Apartment</p></div><strong>₦85,000,000</strong></div>
-          <div class="property-details"><span>2 beds</span><span>2 baths</span><span>1,450 sq ft</span></div>
-          <p class="property-address">Gwarinpa, Abuja</p>
-          <button class="property-enquire" type="button">View details &amp; enquire</button>
-        </article> -->
       </div>
       <p class="empty-state" id="empty-state">No homes match that search just yet. Try another collection.</p>
       <p class="listing-disclaimer">Property details are indicative examples. Confirm the exact address, price, title and availability with management before making a decision.</p>
@@ -133,6 +96,11 @@
         <p class="dialog-amenities" id="dialog-amenities"></p>
         <p class="dialog-disclaimer">These indicative details must be confirmed by management. Exact address and availability are subject to confirmation.</p>
       </div>
+      <section class="recommended-listings" aria-labelledby="recommended-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A few more to explore</p>
+        <h3 id="recommended-title">You may also like</h3>
+        <div class="recommendation-grid" id="recommendation-grid"></div>
+      </section>
       <form action="https://formspree.io/f/xbglvrer" method="post" class="property-inquiry-form" id="property-inquiry-form">
         <h3>Contact management</h3>
         <input type="hidden" name="property">
@@ -143,29 +111,60 @@
         <button class="button button-dark" type="submit">Email management</button>
         <p class="inquiry-message" id="inquiry-message" role="status"></p>
       </form>
+      <form action="https://formspree.io/f/xbglvrer" method="post" class="inspection-form" id="inspection-form">
+        <h3>Schedule an inspection</h3>
+        <p>Choose a convenient date and time. Our team will confirm your appointment.</p>
+        <input type="hidden" name="property">
+        <label><span>Your name</span><input name="name" autocomplete="name" required></label>
+        <label><span>Email address</span><input name="email" type="email" autocomplete="email" required></label>
+        <label><span>Phone number</span><input name="phone" type="tel" autocomplete="tel" required></label>
+        <label><span>Preferred date</span><input name="date" type="date" required></label>
+        <label><span>Preferred time</span><input name="time" type="time" required></label>
+        <label class="inspection-notes"><span>Anything we should know?</span><textarea name="details" rows="3" placeholder="Number of visitors, questions, or accessibility needs"></textarea></label>
+        <label class="form-consent inspection-consent"><input name="privacy_consent" type="checkbox" value="Accepted" required><span>I agree to the <button class="legal-inline-button" type="button" data-open-legal="privacy-policy">Privacy Policy</button>.</span></label>
+        <button class="button button-dark" type="submit">Request inspection</button>
+        <p class="inspection-message" id="inspection-message" role="status"></p>
+      </form>
     </dialog>
 
     <section class="approach section-shell" id="approach">
-      <div class="approach-image reveal"><img src="room-stiit.jpg" alt="Architectural detail in a calm modern home"><span>Built for living</span></div>
+      <div class="approach-image reveal"><img src="Assets/sitting-room-decoy.jpg" alt="Architectural detail in a calm modern home"><span>Built for living</span></div>
       <div class="approach-copy reveal reveal-delay"><p class="eyebrow"><span class="eyebrow-line"></span> Why DowMan Nigeria</p><h2>Real estate,<br><i>reconsidered.</i></h2><p>Buying a home is one of the few big decisions that is also deeply personal. We bring a sharp eye, local knowledge, and a quieter way of working to every search across Nigeria.</p><a class="button button-outline" href="#contact">Meet our approach</a></div>
     </section>
 
     <section class="journal section-shell" id="journal">
       <div class="section-heading reveal"><div><p class="eyebrow"><span class="eyebrow-line"></span> Notes from the field</p><h2>The DowMan<br>journal.</h2></div><a class="text-link desktop-only" href="#journal">Read all stories</a></div>
       <div class="journal-grid">
-        <a class="journal-card journal-main reveal" href="#contact"><div class="journal-image"><img src="Units-2bed.jpg" alt="Brutalist concrete architecture detail"></div><span class="journal-type">Perspective · 06 min read</span><h3>Why the best homes leave room for a little mystery</h3></a>
-        <a class="journal-card reveal reveal-delay" href="#contact"><div class="journal-image"><img src="3rooms.jpg" alt="Light-filled creative studio interior"></div><span class="journal-type">The guide · 04 min read</span><h3>Making an old space feel like yours</h3></a>
-        <a class="journal-card reveal reveal-delay-2" href="#contact"><div class="journal-image"><img src="unitsof-3beds.jpg" alt="Thoughtful modern office interior"></div><span class="journal-type">Neighbourhoods · 05 min read</span><h3>A slower weekend in Lagos</h3></a>
+        <a class="journal-card journal-main reveal" href="#contact"><div class="journal-image"><img src="Assets/Comfy-Home.jpg" alt="Brutalist concrete architecture detail"></div><span class="journal-type">Perspective · 06 min read</span><h3>Why the best homes leave room for a little mystery</h3></a>
+        <a class="journal-card reveal reveal-delay" href="#contact"><div class="journal-image"><img src="Assets/Vintage-Style.jpg" alt="Light-filled creative studio interior"></div><span class="journal-type">The guide · 04 min read</span><h3>Making an old space feel like yours</h3></a>
+        <a class="journal-card reveal reveal-delay-2" href="#contact"><div class="journal-image"><img src="Assets/Safe-space.jpg" alt="Thoughtful modern office interior"></div><span class="journal-type">Neighbourhoods · 05 min read</span><h3>A slower weekend in Lagos</h3></a>
       </div>
     </section>
 
     <section class="contact section-shell" id="contact">
       <div class="contact-copy reveal"><p class="eyebrow"><span class="eyebrow-line"></span> Speak with our team</p><h2>Let's find<br><i>your place.</i></h2><p>Whether you're ready to make a move or simply curious about what's out there, we'd love to hear from you in Lagos, Abuja, or anywhere in Nigeria.</p></div>
-      <form action="https://formspree.io/f/xbglvrer" class="contact-form reveal reveal-delay" id="contact-form"><label><span>Your name</span><input type="text" name="name" placeholder="Emmanuel" required></label><label><span>Email address</span><input type="email" name="email" placeholder="emmanuel@example.com" required></label><label><span>What can we help with?</span><select name="interest"><option>Finding a home</option><option>Selling a property</option><option>Just saying hello</option></select></label><button class="button button-light" type="submit">Send enquiry</button><p class="form-message" id="form-message" role="status"></p></form>
+      <form action="https://formspree.io/f/xbglvrer" class="contact-form reveal reveal-delay" id="contact-form"><label><span>Your name</span><input type="text" name="name" placeholder="Emmanuel" required></label><label><span>Email address</span><input type="email" name="email" placeholder="emmanuel@example.com" required></label><label><span>What can we help with?</span><select name="interest"><option>Finding a home</option><option>Selling a property</option><option>Just saying hello</option></select></label><label class="form-consent"><input name="privacy_consent" type="checkbox" value="Accepted" required><span>I agree to the <button class="legal-inline-button" type="button" data-open-legal="privacy-policy">Privacy Policy</button> and <button class="legal-inline-button" type="button" data-open-legal="terms-of-use">Terms of Use</button>.</span></label><button class="button button-light" type="submit">Send enquiry</button><p class="form-message" id="form-message" role="status"></p></form>
     </section>
   </main>
 
-  <footer class="site-footer section-shell"><a class="brand" href="#top"><span class="brand-mark">D</span><span>Dowman properties <em>&amp; Co.</em></span></a><p>Thoughtful homes across Nigeria.</p><div class="footer-links"><a href="#properties">Instagram</a><a href="#contact">hello@dowman.ng</a><a href="#top">Back to top</a></div><small>© 2024 DowMan properties &amp; Co. Nigeria. All rights reserved.</small></footer>
+  <footer class="site-footer section-shell"><a class="brand" href="#top"><span class="brand-mark">D</span><span>Dowman properties <em>&amp; Co.</em></span></a><p>Thoughtful homes across Nigeria.</p><div class="footer-links"><a href="#properties">Instagram</a><a href="#contact">hello@dowman.ng</a><button type="button" data-open-legal="privacy-policy">Privacy</button><button type="button" data-open-legal="terms-of-use">Terms</button><a href="#top">Back to top</a></div><small>© 2024 DowMan properties &amp; Co. Nigeria. All rights reserved.</small></footer>
+  <dialog class="legal-dialog" id="privacy-policy" aria-labelledby="privacy-title">
+    <div class="dialog-heading"><p class="eyebrow"><span class="eyebrow-line"></span> Your information</p><button class="dialog-close" type="button" aria-label="Close privacy policy">Close</button></div>
+    <h2 id="privacy-title">Privacy Policy</h2>
+    <p>When you contact DowMan Properties or request an inspection, we collect the details you provide, such as your name, email, phone number, property of interest, and preferred appointment time. We use these details to respond to your enquiry and coordinate property viewings.</p>
+    <p>Enquiry and inspection forms are handled by Formspree on our behalf. Do not include sensitive personal or financial information in a message. We do not sell your contact details. To ask us to update or delete information you have submitted, email <a href="mailto:hello@dowman.ng">hello@dowman.ng</a>.</p>
+    <p>Property information and availability can change; please confirm details directly with our team.</p>
+  </dialog>
+  <dialog class="legal-dialog" id="terms-of-use" aria-labelledby="terms-title">
+    <div class="dialog-heading"><p class="eyebrow"><span class="eyebrow-line"></span> Using this website</p><button class="dialog-close" type="button" aria-label="Close terms of use">Close</button></div>
+    <h2 id="terms-title">Terms of Use</h2>
+    <p>This website provides general property information and a way to contact DowMan Properties. Listings, prices, images, descriptions, and availability are indicative only and are not an offer, valuation, or guarantee. Confirm all property details, title, price, and availability with our team before making a decision.</p>
+    <p>Submitting an enquiry or inspection request does not reserve a property or confirm an appointment. Our team will contact you to confirm arrangements. Website content is provided as-is and may be updated without notice.</p>
+    <p>For questions about these terms, contact <a href="mailto:hello@dowman.ng">hello@dowman.ng</a>.</p>
+  </dialog>
+  <a class="whatsapp-float" href="https://wa.me/2347045332593?text=Hello%20DowMan%20Properties%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat with DowMan Properties on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3.2a12.65 12.65 0 0 0-10.8 19.22L3.56 28.8l6.54-1.71A12.65 12.65 0 1 0 16.04 3.2Zm0 22.96c-1.91 0-3.78-.51-5.42-1.48l-.39-.23-3.88 1.02 1.04-3.78-.25-.4a10.3 10.3 0 1 1 8.9 4.87Zm5.65-7.72c-.31-.16-1.84-.91-2.12-1.02-.28-.1-.49-.16-.7.16-.2.31-.8 1.02-.98 1.23-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.52-.91-.81-1.53-1.82-1.71-2.13-.18-.31-.02-.48.14-.63.14-.14.31-.36.46-.54.16-.18.2-.31.31-.52.1-.2.05-.38-.03-.54-.08-.15-.7-1.69-.96-2.31-.25-.6-.51-.52-.7-.53h-.6c-.21 0-.54.08-.82.39-.28.31-1.07 1.05-1.07 2.56 0 1.51 1.1 2.97 1.25 3.18.16.2 2.16 3.3 5.23 4.63.73.31 1.3.5 1.74.64.73.23 1.4.2 1.93.12.59-.09 1.84-.75 2.1-1.48.26-.74.26-1.36.18-1.49-.08-.13-.28-.2-.59-.36Z"/></svg>
+  </a>
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>

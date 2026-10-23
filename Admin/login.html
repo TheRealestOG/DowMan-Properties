@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f2ed">
+  <title>Admin sign in | DowMan Properties</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-story" aria-label="DowMan Properties">
+      <a class="brand" href="../index.html" aria-label="DowMan Properties home">
+        <span class="brand-mark">D</span>
+        <span>DowMan properties <em>&amp; Co.</em></span>
+      </a>
+      <div class="story-copy">
+        <p class="eyebrow"><span></span> The private office</p>
+        <h1>A better view<br>of <i>what's next.</i></h1>
+        <p>Manage your property collection with the same care you give every home.</p>
+      </div>
+      <span class="story-caption">Lagos · Abuja · Everywhere</span>
+    </section>
+
+    <section class="auth-panel" aria-labelledby="login-title">
+      <a class="back-link" href="../index.html"><span aria-hidden="true">←</span> Back to the website</a>
+      <div class="auth-form-wrap">
+        <p class="eyebrow"><span></span> Administrator access</p>
+        <h2 id="login-title">Welcome <i>back.</i></h2>
+        <p class="auth-intro">Sign in to continue to your listings dashboard.</p>
+
+        <form id="login-form" class="auth-form">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="username" placeholder="you@company.com" required>
+
+          <div class="password-label">
+            <label for="password">Password</label>
+          </div>
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+
+          <p class="form-message" id="login-message" role="alert" hidden></p>
+          <button class="primary-button" type="submit">Continue to dashboard <span aria-hidden="true">→</span></button>
+        </form>
+    
+      </div>
+      <footer class="auth-footer">© 2026 DowMan Properties &amp; Co.</footer>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

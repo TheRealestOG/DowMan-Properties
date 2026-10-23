@@ -4,6 +4,40 @@ const esc = (s) =>
   );
 const cap = (s) => (s ? s[0].toUpperCase() + s.slice(1) : "");
 const naira = (n) => (n ? "₦" + Number(n).toLocaleString() : "");
+let listings = [];
+
+function showListingDetails(listing) {
+  const set = (selector, value) => {
+    document.querySelector(selector).textContent = value ?? "";
+  };
+  set("#dialog-title", listing.title);
+  set("#dialog-address", listing.address);
+  set("#dialog-price", naira(listing.price));
+  set("#dialog-beds", listing.beds);
+  set("#dialog-baths", listing.baths);
+  set("#dialog-area", `${Number(listing.area_sqft).toLocaleString()} sq ft`);
+  set("#dialog-parking", listing.parking);
+  set("#dialog-amenities", listing.amenities);
+
+  document.querySelector("#property-inquiry-form").elements.property.value = listing.title;
+  document.querySelector("#inspection-form").elements.property.value = listing.title;
+  document.querySelector("#inquiry-message").textContent = "";
+  document.querySelector("#inspection-message").textContent = "";
+
+  const recommendations = listings
+    .filter((item) => item.id !== listing.id)
+    .sort((a, b) => Number(b.type === listing.type) - Number(a.type === listing.type))
+    .slice(0, 3);
+  document.querySelector("#recommendation-grid").innerHTML = recommendations.map((item) => `
+    <button class="recommendation-card" type="button" data-recommendation-id="${esc(item.id)}">
+      <img src="${esc(item.images?.[0] || "")}" alt="${esc(item.title)}">
+      <strong>${esc(item.title)}</strong>
+      <span>${esc(item.location)} · ${esc(cap(item.type))}</span>
+    </button>`).join("");
+
+  const dialog = document.querySelector("#property-dialog");
+  if (!dialog.open) dialog.showModal();
+}
 
 async function loadListings() {
   const grid = document.getElementById("property-grid");
@@ -12,11 +46,15 @@ async function loadListings() {
     .select("*")
     .order("created_at", { ascending: true });
 
- 
-  if (error) { console.error(error); return; }
+  if (error) {
+    console.error("Unable to load property listings:", error);
+    return;
+  }
+  listings = data || [];
 
-  grid.insertAdjacentHTML("beforeend", data.map((l) => `
+  grid.insertAdjacentHTML("beforeend", listings.map((l) => `
     <article class="property-card" data-source="db"
+      data-id="${esc(l.id)}"
       data-type="${esc(l.type)}"
       data-name="${esc(l.title)}"
       data-address="${esc(l.address)}"
@@ -41,28 +79,24 @@ async function loadListings() {
       <p class="property-address">${esc(l.address)}</p>
       <button class="property-enquire" type="button">View details &amp; enquire</button>
     </article>`).join(""));
+    const activeFilter = document.querySelector(".filter-chip.active");
+    if (activeFilter) activeFilter.click();
 }
 
 document.addEventListener("click", (e) => {
+  const recommendation = e.target.closest("[data-recommendation-id]");
+  if (recommendation) {
+    const listing = listings.find((item) => String(item.id) === recommendation.dataset.recommendationId);
+    if (listing) showListingDetails(listing);
+    return;
+  }
+
   const button = e.target.closest(".property-enquire");
   if (!button) return;
   const card = button.closest(".property-card");
   if (!card || card.dataset.source !== "db") return;
-
-  const d = card.dataset;
-  const set = (id, v) => (document.querySelector(id).textContent = v ?? "");
-  set("#dialog-title", d.name);
-  set("#dialog-address", d.address);
-  set("#dialog-price", d.price);
-  set("#dialog-beds", d.beds);
-  set("#dialog-baths", d.baths);
-  set("#dialog-area", d.area);
-  set("#dialog-parking", d.parking);
-  set("#dialog-amenities", d.amenities);
-
-  document.querySelector("#property-inquiry-form").elements.property.value = d.name;
-  document.querySelector("#inquiry-message").textContent = "";
-  document.querySelector("#property-dialog").showModal();
+  const listing = listings.find((item) => String(item.id) === card.dataset.id);
+  if (listing) showListingDetails(listing);
 });
 
 loadListings();

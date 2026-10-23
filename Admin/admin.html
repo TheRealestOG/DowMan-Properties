@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f2ed">
+  <title>Listings dashboard | DowMan Properties</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="dashboard-page">
+  <aside class="sidebar">
+    <a class="brand" href="../index.html" aria-label="DowMan Properties home">
+      <span class="brand-mark">D</span>
+      <span>DowMan properties <em>&amp; Co.</em></span>
+    </a>
+    <p class="sidebar-label">Workspace</p>
+    <nav class="side-nav" aria-label="Dashboard navigation">
+      <a class="side-link active" href="#overview" aria-current="page"><span class="nav-icon" aria-hidden="true">▦</span> Overview</a>
+      <a class="side-link" href="#listings"><span class="nav-icon" aria-hidden="true">⌂</span> Listings <span class="nav-count" id="nav-listing-count">0</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="profile-card">
+        <span class="profile-avatar" aria-hidden="true">D</span>
+        <span class="profile-copy"><strong>DowMan Admin</strong><small>Property manager</small></span>
+      </div>
+      <button class="logout-button" id="logout-button" type="button"><span aria-hidden="true">↪</span> Sign out</button>
+      <a class="site-link" href="../index.html"><span aria-hidden="true">↗</span> View public website</a>
+    </div>
+  </aside>
+
+  <main class="main-content" id="overview">
+    <header class="topbar">
+      <div class="breadcrumb">Workspace <span>/</span> <strong>Overview</strong></div>
+      <div class="topbar-date"><span class="status-dot"></span> Listings workspace</div>
+    </header>
+
+    <section class="page-intro">
+      <div>
+        <p class="eyebrow"><span></span> Property management</p>
+        <h1>Your listings,<br><i>considered.</i></h1>
+        <p class="intro-copy">A clear view of the homes in your collection.</p>
+      </div>
+      <button class="primary-button" id="open-listing-form" type="button"><span aria-hidden="true">＋</span> Add a listing</button>
+    </section>
+
+    <section class="prototype-banner" role="note">
+      <span class="banner-icon" aria-hidden="true">i</span>
+      <button class="banner-dismiss" type="button" aria-label="Dismiss prototype notice">×</button>
+    </section>
+
+    <section class="stat-grid" aria-label="Listing summary">
+      <article class="stat-card"><span class="stat-label">Total listings</span><div><strong id="total-count">0</strong><span class="stat-symbol">⌂</span></div><span class="stat-footnote">In your collection</span></article>
+      <article class="stat-card"><span class="stat-label">Houses</span><div><strong id="house-count">0</strong><span class="stat-symbol">⌂</span></div><span class="stat-footnote">Listed properties</span></article>
+      <article class="stat-card"><span class="stat-label">Apartments</span><div><strong id="apartment-count">0</strong><span class="stat-symbol">▤</span></div><span class="stat-footnote">Listed properties</span></article>
+      <article class="stat-card"><span class="stat-label">Townhouses</span><div><strong id="townhouse-count">0</strong><span class="stat-symbol">⌂</span></div><span class="stat-footnote">Listed properties</span></article>
+    </section>
+
+    <section class="listings-section" id="listings" aria-labelledby="listings-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span></span> Your collection</p><h2 id="listings-heading">All listings <span id="heading-count">0</span></h2></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="listing-search" type="search" placeholder="Search listings..." aria-label="Search listings"></label>
+      </div>
+      <div class="listing-toolbar">
+        <div class="filter-group" role="group" aria-label="Filter listings by type">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All listings</button>
+          <button class="filter-button" type="button" data-filter="house" aria-pressed="false">Houses</button>
+          <button class="filter-button" type="button" data-filter="apartment" aria-pressed="false">Apartments</button>
+          <button class="filter-button" type="button" data-filter="townhouse" aria-pressed="false">Townhouses</button>
+        </div>
+        <span class="result-count" id="result-count" aria-live="polite">0 listings</span>
+      </div>
+      <div class="listing-grid" id="listing-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state">
+        <span class="empty-icon" aria-hidden="true">⌂</span>
+        <h3 id="empty-title">Your collection starts here.</h3>
+        <p id="empty-copy">Add your first listing to begin building your property collection.</p>
+        <button class="secondary-button" id="empty-add-button" type="button">Add your first listing <span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+    <footer class="dashboard-footer">DowMan Properties &amp; Co. <span>·</span> Listings workspace</footer>
+  </main>
+
+  <dialog class="listing-dialog" id="listing-dialog" aria-labelledby="form-title">
+    <form id="listing-form" class="listing-form">
+      <div class="dialog-heading">
+        <div><p class="eyebrow"><span></span> Property details</p><h2 id="form-title">Add a <i>listing.</i></h2></div>
+        <button class="dialog-close" type="button" id="close-listing-form" aria-label="Close form">×</button>
+      </div>
+      <p class="dialog-copy">Fields marked with * are required.</p>
+      <div class="form-grid">
+        <label class="form-field full-width"><span>Property title *</span><input name="title" maxlength="100" placeholder="e.g. A light-filled family home" required></label>
+        <label class="form-field"><span>Property type *</span><select name="type" required><option value="">Choose a type</option><option value="house">House</option><option value="apartment">Apartment</option><option value="townhouse">Townhouse</option></select></label>
+        <label class="form-field"><span>Location *</span><input name="location" maxlength="80" placeholder="e.g. Ikoyi, Lagos" required></label>
+        <label class="form-field"><span>Price (₦) *</span><input name="price" type="number" min="1" step="1" placeholder="e.g. 125000000" required></label>
+        <label class="form-field"><span>Full address</span><input name="address" maxlength="180" placeholder="Street, neighbourhood, city"></label>
+        <label class="form-field"><span>Bedrooms</span><input name="beds" type="number" min="0" step="1" placeholder="0"></label>
+        <label class="form-field"><span>Bathrooms</span><input name="baths" type="number" min="0" step="1" placeholder="0"></label>
+        <label class="form-field"><span>Floor area (sq ft)</span><input name="area_sqft" type="number" min="0" step="1" placeholder="e.g. 2400"></label>
+        <label class="form-field"><span>Parking spaces</span><input name="parking" type="number" min="0" step="1" placeholder="0"></label>
+        <label class="form-field full-width"><span>Image URL</span><input name="image" type="url" maxlength="1000" placeholder="https://example.com/property-photo.jpg"><small>Use a direct link to a publicly accessible image.</small></label>
+        <label class="form-field full-width"><span>Amenities</span><textarea name="amenities" maxlength="500" rows="3" placeholder="e.g. Pool, garden, 24-hour security"></textarea></label>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <div class="form-actions"><button class="cancel-button" type="button" id="cancel-listing-form">Cancel</button><button class="primary-button" type="submit">Save listing <span aria-hidden="true">→</span></button></div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase-config.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>
